@@ -24,6 +24,7 @@ import java.util.Map;
 
 
 import edu.mushrchun.shanbay.dao.ArticleReader;
+import edu.mushrchun.shanbay.dao.WordListReader;
 import edu.mushrchun.shanbay.entity.Article;
 
 public class MainActivity extends AppCompatActivity {
@@ -133,10 +134,12 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
 
         ArticleReader ar = ArticleReader.getInstance();
+        WordListReader wlr = WordListReader.getInstance();
 
         AssetManager am = getAssets();
         try {
             ar.Load(am.open("nce4.txt"));
+            wlr.Load(am.open("nce4_words"));
         } catch (IOException e) {
             e.printStackTrace();
         }
