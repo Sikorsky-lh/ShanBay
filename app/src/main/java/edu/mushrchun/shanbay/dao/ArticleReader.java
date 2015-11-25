@@ -21,7 +21,7 @@ public class ArticleReader {
     private StringBuilder m_sb;
     private String m_s;
 
-    public List articleList;
+    public List<Article> articleList;
 
     public ArticleReader articleReader = this;
 
@@ -49,10 +49,15 @@ public class ArticleReader {
         articleList = new ArrayList<Article>();
         String[] articleArr = m_s.split("Lesson [0-9][0-9\\s]");
             for(int j=1;j<=articleArr.length;j++){
-                Article a = new Article();
-                a.setLessonNum(j);
-                a.setContent(articleArr[j-1]);
-                articleList.add(a);
+                Article a;
+                if(!articleArr[j-1].trim().startsWith("Unit")){
+                    a = new Article();
+                    a.setLessonNum(j);
+                    a.setContent(articleArr[j-1]);
+                    articleList.add(a);
+                }
+
+
             }
 
 
@@ -71,6 +76,7 @@ public class ArticleReader {
             String line = null;
             while((line=br.readLine())!=null){
                 m_sb.append(line);
+                m_sb.append('\n');
 
             }
 

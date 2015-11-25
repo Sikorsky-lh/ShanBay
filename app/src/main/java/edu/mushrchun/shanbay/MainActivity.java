@@ -1,6 +1,7 @@
 package edu.mushrchun.shanbay;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Handler;
 import android.os.Message;
@@ -95,19 +96,29 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
+
             ViewHolder viewHolder;
 
             if(convertView==null){
                 convertView = LayoutInflater.from(context).inflate(R.layout.adapter_articlelist,null);
                 viewHolder = new ViewHolder();
                 viewHolder.textView = (TextView) convertView.findViewById(R.id.textview);
+
                 convertView.setTag(viewHolder);
             }
             else{
                 viewHolder = (ViewHolder) convertView.getTag();
             }
-            viewHolder.textView.setText("Lesson"+position);
+            viewHolder.textView.setText("Lesson"+(position+1));
+            viewHolder.textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(MainActivity.this,ArticleActivity.class);
+                    i.putExtra("article-num", position);
+                    startActivity(i);
+                }
+            });
             return convertView;
         }
     }
