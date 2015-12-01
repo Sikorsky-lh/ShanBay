@@ -42,7 +42,7 @@ public class ArticleActivity extends AppCompatActivity {
 
         articleNum = getIntent().getIntExtra("article-num", -1);
         tv_article = (TextView) findViewById(R.id.articleContent);
-        tv_article.setText(ar.articleList.get(articleNum).getContent());
+        tv_article.setText(ar.articleList.get(articleNum).getMainPart());
 
         rb_level = (RatingBar) findViewById(R.id.ratingBar);
         rb_level.setStepSize(1.0f);
