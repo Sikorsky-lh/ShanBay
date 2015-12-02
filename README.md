@@ -2,8 +2,9 @@
 
 **提供的素材**
 
-1.  新概念4的文本，包括所有课文
-2.  单词列表 nce4_words.txt （每行一个单词，以及对应的等级）
+1.  新概念4的文本，包括所有课文 [Link](materials/nce4.txt)
+2.  单词列表 nce4_words.txt （每行一个单词，以及对应的等级） [Link](materialsnce4_words.txt)
+
 
 **App要求**
 
