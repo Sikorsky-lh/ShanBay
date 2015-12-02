@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             viewHolder.textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(MainActivity.this,ArticleActivity.class);
+                    Intent i = new Intent(MainActivity.this,ContentActivity.class);
                     i.putExtra("article-num", position);
                     startActivity(i);
                 }

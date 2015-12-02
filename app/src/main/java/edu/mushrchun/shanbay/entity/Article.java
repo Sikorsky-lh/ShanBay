@@ -42,7 +42,7 @@ public class Article {
     }
 
     private void doSplit(){
-        String[] tString= content.split("New words and expressions");
+        String[] tString= content.split("New words and expressions?.(生词和短语)?");
         splitArr[0] = tString[0];
         splitArr[1] = tString[1].split("参考译文")[0];
         splitArr[2] = tString[1].split("参考译文")[1];
