@@ -35,4 +35,4 @@ Compared with the alien, our technology is backward。
 ![4th pic](screenshots/Screenshot_20151202-124341.png)
 
 APK链接：
-[APK download](apk/app-debug.apk)
+[APK download](apk/)
